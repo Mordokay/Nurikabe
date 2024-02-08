@@ -12,7 +12,8 @@ struct GridView: View {
   @ObservedObject var viewModel: NurikabeViewModel
   var interactable: Bool
 
-    var body: some View {
+  var body: some View {
+    VStack(spacing: 0) {
       ForEach((0..<grid.count), id: \.self) { i in
         HStack(spacing: 0) {
           ForEach((0..<grid[i].count), id: \.self) { j in
@@ -36,10 +37,6 @@ struct GridView: View {
                     .fill(.black)
                     .frame(width: 12, height: 12)
                     .cornerRadius(6)
-//                  Image("i-letter")
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fill)
-//                    .frame(width: 20, height: 20)
                 })
                 .onTapGesture {
                   if interactable{
@@ -70,6 +67,7 @@ struct GridView: View {
         }
       }
     }
+  }
 }
 
 #Preview {
